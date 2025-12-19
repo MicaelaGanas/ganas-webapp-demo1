@@ -16,9 +16,9 @@ const flexAlignClasses: Record<Alignment, string> = {
 };
 
 const gridColumnClasses: Record<GridColumns, string> = {
-  "2": "grid-cols-2",
-  "3": "grid-cols-3",
-  auto: "grid-flow-col auto-cols-max",
+  "2": "grid-cols-1 sm:grid-cols-2",
+  "3": "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+  auto: "grid-cols-1 sm:grid-flow-col sm:auto-cols-max",
 };
 
 export function LayoutSection() {
@@ -29,10 +29,10 @@ export function LayoutSection() {
 
   const containerClasses = useMemo(() => {
     if (mode === "flex") {
-      return `flex ${flexAlignClasses[alignment]} gap-6`;
+      return `flex flex-wrap ${flexAlignClasses[alignment]} gap-4 sm:gap-6`;
     }
 
-    return `grid ${gridColumnClasses[columns]} gap-6`;
+    return `grid ${gridColumnClasses[columns]} gap-4 sm:gap-6`;
   }, [mode, alignment, columns]);
 
   const codeSample = `<section class="${containerClasses} rounded-3xl bg-slate-900/90 p-6 text-white">
@@ -88,7 +88,7 @@ export function LayoutSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
                 Main axis alignment
               </p>
-              <div className="grid gap-2 sm:flex sm:flex-col">
+              <div className="grid grid-cols-1 gap-2 sm:flex sm:flex-col">
                 {(
                   [
                     { value: "start", label: "Start" },
@@ -100,7 +100,7 @@ export function LayoutSection() {
                     key={option.value}
                     type="button"
                     onClick={() => setAlignment(option.value)}
-                    className={`rounded-2xl px-4 py-2 text-left font-semibold transition ${
+                    className={`w-full rounded-2xl px-4 py-2 text-left font-semibold transition ${
                       alignment === option.value
                         ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
                         : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
@@ -116,7 +116,7 @@ export function LayoutSection() {
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
                 Column count
               </p>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
                 {(
                   [
                     { value: "2", label: "2" },
@@ -128,7 +128,7 @@ export function LayoutSection() {
                     key={option.value}
                     type="button"
                     onClick={() => setColumns(option.value)}
-                    className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
+                    className={`w-full rounded-2xl px-4 py-2 text-sm font-semibold transition ${
                       columns === option.value
                         ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
                         : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"

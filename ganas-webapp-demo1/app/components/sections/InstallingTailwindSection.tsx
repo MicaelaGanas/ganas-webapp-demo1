@@ -91,7 +91,7 @@ export function InstallingTailwindSection() {
           {showCode && <CodeSnippet code={snippets[activeTab]} language={activeTab === "cdn" ? "html" : "bash"} />}
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-8 lg:rounded-[2.5rem] dark:border-slate-700 dark:bg-slate-800">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-8 lg:rounded-[2.5rem] dark:border-slate-700 dark:bg-slate-800">
           <span className="absolute -top-9 right-6 origin-center -rotate-12 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg dark:bg-slate-700">
             Live UI
           </span>

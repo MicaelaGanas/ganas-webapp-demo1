@@ -61,7 +61,7 @@ export function StatesSection() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Hover effect
             </h3>
-            <div className="grid gap-2 sm:flex sm:flex-col">
+            <div className="grid grid-cols-1 gap-2 sm:flex sm:flex-col">
               {(
                 [
                   { value: "lift", label: "Lift" },
@@ -73,7 +73,7 @@ export function StatesSection() {
                   key={option.value}
                   type="button"
                   onClick={() => setEffect(option.value)}
-                  className={`rounded-2xl px-4 py-2 text-left font-semibold transition ${
+                  className={`w-full rounded-2xl px-4 py-2 text-left font-semibold transition ${
                     effect === option.value
                       ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
                       : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
@@ -89,7 +89,7 @@ export function StatesSection() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Transition speed
             </h3>
-              <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
               {(
                 [
                   { value: "150", label: "150ms" },
@@ -101,7 +101,7 @@ export function StatesSection() {
                   key={option.value}
                   type="button"
                   onClick={() => setSpeed(option.value)}
-                  className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
+                  className={`w-full rounded-2xl px-4 py-2 text-sm font-semibold transition ${
                     speed === option.value
                       ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
                       : "bg-white text-slate-600 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"

@@ -60,7 +60,7 @@ export function PlaygroundSection() {
         </aside>
 
         <div className="space-y-6">
-          <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-800 p-8 text-white shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-10 lg:rounded-[2.5rem] dark:border-slate-700">
+          <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-800 p-6 text-white shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-10 lg:rounded-[2.5rem] dark:border-slate-700">
             <div className={previewClasses}>
               <h3 className="text-2xl font-black tracking-tight">Tailwind Playground</h3>
               <p className="mt-3 text-sm text-white/80">

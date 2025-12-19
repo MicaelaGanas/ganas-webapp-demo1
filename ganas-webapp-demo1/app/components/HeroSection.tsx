@@ -20,23 +20,23 @@ export function HeroSection() {
           <p className="text-base leading-relaxed text-slate-600 sm:text-lg md:text-xl dark:text-slate-300">
             Build responsive, expressive interfaces faster than ever. Follow along with live previews, editable examples, and guided explanations tailored for beginners.
           </p>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             <a
               href="#installing-tailwind"
-              className="group inline-flex items-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:-translate-y-1 hover:bg-sky-500 hover:shadow-2xl"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:-translate-y-1 hover:bg-sky-500 hover:shadow-2xl sm:w-auto"
             >
               Start learning
               <span className="transition group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#utility-classes"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-1 hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-sky-300"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-1 hover:border-sky-300 hover:text-sky-600 sm:w-auto dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-sky-300"
             >
               Explore utilities
             </a>
           </div>
         </div>
-        <div className="relative mt-8 w-full rounded-[2rem] bg-white/85 p-6 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-4 hover:shadow-[0_40px_120px_-40px_rgba(14,165,233,0.7)] sm:mt-10 sm:p-8 lg:max-w-md dark:bg-slate-900/90">
+        <div className="relative mt-8 w-full rounded-[2rem] bg-white/85 p-5 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-4 hover:shadow-[0_40px_120px_-40px_rgba(14,165,233,0.7)] sm:mt-10 sm:p-8 lg:max-w-md dark:bg-slate-900/90">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
             <p className="text-xs font-semibold uppercase tracking-[0.45em] text-slate-500 dark:text-slate-400">
               Live preview

@@ -67,7 +67,7 @@ export function UtilityClassesSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Color palette
             </p>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {Object.keys(colorMap).map((option) => (
                 <button
                   key={option}
@@ -89,7 +89,7 @@ export function UtilityClassesSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Spacing scale
             </p>
-            <div className="grid gap-2 sm:flex sm:flex-col">
+            <div className="grid grid-cols-1 gap-2 sm:flex sm:flex-col">
               {Object.keys(spacingMap).map((option) => (
                 <button
                   key={option}
