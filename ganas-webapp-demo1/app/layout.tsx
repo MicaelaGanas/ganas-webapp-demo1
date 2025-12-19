@@ -22,11 +22,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const setInitialTheme = `(() => {
+    try {
+      const storageKey = "tailwind-tutorial-dark-mode";
+      const stored = localStorage.getItem(storageKey);
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (stored === "true" || (!stored && prefersDark)) {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (error) {
+      console.warn("Unable to determine initial color scheme", error);
+    }
+  })();`;
+
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: setInitialTheme,
+          }}
+        />
         {children}
       </body>
     </html>
