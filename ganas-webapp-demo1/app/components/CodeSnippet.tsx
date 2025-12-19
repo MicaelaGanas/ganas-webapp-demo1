@@ -11,8 +11,8 @@ export function CodeSnippet({ code, language = "bash" }: CodeSnippetProps) {
   const { copied, copy } = useCopyToClipboard();
 
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-900 text-slate-100 shadow-xl dark:border-slate-700 dark:bg-slate-950">
-      <div className="flex items-center justify-between border-b border-slate-800/60 bg-slate-900/80 px-5 py-3 text-xs uppercase tracking-[0.25em] text-slate-400 dark:border-slate-800">
+    <div className="relative w-full max-w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-900 text-slate-100 shadow-xl dark:border-slate-700 dark:bg-slate-950">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800/60 bg-slate-900/80 px-5 py-3 text-xs uppercase tracking-[0.25em] text-slate-400 dark:border-slate-800">
         <span>{language}</span>
         <button
           type="button"
@@ -22,8 +22,8 @@ export function CodeSnippet({ code, language = "bash" }: CodeSnippetProps) {
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
-      <pre className="overflow-x-auto p-5 text-sm leading-relaxed text-slate-200">
-        <code>{code}</code>
+      <pre className="max-w-full overflow-x-auto p-5 font-mono text-[13px] leading-relaxed text-slate-200 sm:text-sm">
+        <code className="whitespace-pre min-w-0">{code}</code>
       </pre>
     </div>
   );
