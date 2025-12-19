@@ -53,7 +53,7 @@ export function ResponsiveSection() {
   return (
     <section
       id="responsive"
-      className="scroll-mt-28 rounded-[3rem] border border-slate-200 bg-white p-10 shadow-xl transition hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900"
+      className="scroll-mt-28 rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-xl transition hover:shadow-2xl sm:rounded-[3rem] sm:p-8 lg:p-10 dark:border-slate-800 dark:bg-slate-900"
     >
       <header className="space-y-4">
         <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
@@ -67,12 +67,12 @@ export function ResponsiveSection() {
         </p>
       </header>
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <aside className="space-y-6 rounded-3xl border border-slate-200/80 bg-slate-50 p-6 text-sm text-slate-600 shadow-inner dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+      <div className="mt-10 grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <aside className="space-y-6 rounded-3xl border border-slate-200/80 bg-slate-50 p-5 text-sm text-slate-600 shadow-inner sm:p-6 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Breakpoint preview
           </p>
-          <div className="flex flex-col gap-2">
+          <div className="grid gap-2 sm:flex sm:flex-col">
             {(Object.keys(previewConfigs) as BreakpointKey[]).map((key) => (
               <button
                 key={key}
@@ -92,14 +92,14 @@ export function ResponsiveSection() {
           <button
             type="button"
             onClick={() => setShowCode((prev) => !prev)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:text-slate-100"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-800 sm:w-auto dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:text-slate-100"
           >
             {showCode ? "Hide code" : "Show code"}
           </button>
         </aside>
 
         <div className="space-y-6">
-          <div className="rounded-[2.5rem] border border-slate-200 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800 p-10 text-white shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] dark:border-slate-700">
+          <div className="rounded-[2rem] border border-slate-200 bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-slate-800 p-8 text-white shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-10 lg:rounded-[2.5rem] dark:border-slate-700">
             <div className={`${previewConfigs[activeBreakpoint].classes} transition-all duration-500`}
             >
               {previewConfigs[activeBreakpoint].content.map((text) => (

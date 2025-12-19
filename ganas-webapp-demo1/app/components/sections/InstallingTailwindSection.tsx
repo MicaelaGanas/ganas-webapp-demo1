@@ -25,10 +25,10 @@ export function InstallingTailwindSection() {
   return (
     <section
       id="installing-tailwind"
-      className="scroll-mt-28 rounded-[3rem] border border-slate-200 bg-white p-10 shadow-xl transition hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900"
+      className="scroll-mt-28 rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-xl transition hover:shadow-2xl sm:rounded-[3rem] sm:p-8 lg:p-10 dark:border-slate-800 dark:bg-slate-900"
     >
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
             Lesson 1
           </p>
@@ -39,7 +39,7 @@ export function InstallingTailwindSection() {
             Tailwind can be added instantly via a CDN for prototypes or wired into your build with Node.js for production apps. Toggle the setup steps, then inspect the live preview to see what changes.
           </p>
         </div>
-        <div className="flex rounded-full bg-slate-100 p-1 text-sm font-semibold dark:bg-slate-800">
+        <div className="flex w-full items-center gap-2 rounded-full bg-slate-100 p-1 text-sm font-semibold sm:w-auto sm:gap-0 dark:bg-slate-800">
           {(
             [
               { key: "cdn", label: "CDN" },
@@ -50,7 +50,7 @@ export function InstallingTailwindSection() {
               key={tab.key}
               type="button"
               onClick={() => setActiveTab(tab.key)}
-              className={`rounded-full px-4 py-2 transition ${
+              className={`flex-1 rounded-full px-4 py-2 transition sm:flex-none ${
                 activeTab === tab.key
                   ? "bg-white text-slate-900 shadow dark:bg-slate-700 dark:text-slate-100"
                   : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
@@ -62,9 +62,9 @@ export function InstallingTailwindSection() {
         </div>
       </div>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="mt-8 grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="space-y-6">
-          <article className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 text-sm leading-relaxed text-slate-600 shadow-inner dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+          <article className="rounded-3xl border border-slate-200/80 bg-slate-50 p-5 text-sm leading-relaxed text-slate-600 shadow-inner sm:p-6 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
             {activeTab === "cdn" ? (
               <ul className="space-y-3">
                 <li>
@@ -84,15 +84,15 @@ export function InstallingTailwindSection() {
           <button
             type="button"
             onClick={() => setShowCode((prev) => !prev)}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-800 dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:text-slate-100"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-800 sm:w-auto dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:text-slate-100"
           >
             {showCode ? "Hide code" : "Show code"}
           </button>
           {showCode && <CodeSnippet code={snippets[activeTab]} language={activeTab === "cdn" ? "html" : "bash"} />}
         </div>
 
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-8 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] dark:border-slate-700 dark:bg-slate-800">
-          <span className="absolute -top-10 right-6 origin-center -rotate-12 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg dark:bg-slate-700">
+        <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-8 lg:rounded-[2.5rem] dark:border-slate-700 dark:bg-slate-800">
+          <span className="absolute -top-9 right-6 origin-center -rotate-12 rounded-full bg-slate-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg dark:bg-slate-700">
             Live UI
           </span>
           <div className="flex flex-col items-center gap-6">
