@@ -68,7 +68,7 @@ export function ResponsiveSection() {
       </header>
 
       <div className="mt-10 grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <aside className="space-y-6 rounded-3xl border border-slate-200/80 bg-slate-50 p-5 text-sm text-slate-600 shadow-inner sm:p-6 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+        <aside className="space-y-6 rounded-3xl border border-slate-200/80 bg-slate-50 p-5 text-sm text-slate-600 shadow-inner sm:p-6 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 overflow-x-auto min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
             Breakpoint preview
           </p>
@@ -96,6 +96,12 @@ export function ResponsiveSection() {
           >
             {showCode ? "Hide code" : "Show code"}
           </button>
+
+          {showCode && (
+            <div className="lg:hidden overflow-hidden min-w-0">
+              <CodeSnippet code={codeSample} language="html" className="shadow-none" />
+            </div>
+          )}
         </aside>
 
         <div className="space-y-6">
@@ -116,7 +122,11 @@ export function ResponsiveSection() {
             </p>
           </div>
 
-          {showCode && <CodeSnippet code={codeSample} language="html" />}
+          {showCode && (
+            <div className="hidden lg:block">
+              <CodeSnippet code={codeSample} language="html" />
+            </div>
+          )}
         </div>
       </div>
     </section>

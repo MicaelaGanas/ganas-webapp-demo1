@@ -63,7 +63,7 @@ export function InstallingTailwindSection() {
       </div>
 
       <div className="mt-8 grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <div className="space-y-6">
+        <div className="space-y-6 overflow-x-auto min-w-0">
           <article className="rounded-3xl border border-slate-200/80 bg-slate-50 p-5 text-sm leading-relaxed text-slate-600 shadow-inner sm:p-6 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
             {activeTab === "cdn" ? (
               <ul className="space-y-3">
@@ -88,7 +88,11 @@ export function InstallingTailwindSection() {
           >
             {showCode ? "Hide code" : "Show code"}
           </button>
-          {showCode && <CodeSnippet code={snippets[activeTab]} language={activeTab === "cdn" ? "html" : "bash"} />}
+          {showCode && (
+            <div className="lg:hidden overflow-hidden min-w-0">
+              <CodeSnippet code={snippets[activeTab]} language={activeTab === "cdn" ? "html" : "bash"} className="shadow-none" />
+            </div>
+          )}
         </div>
 
         <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-5 shadow-2xl transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_-45px_rgba(14,165,233,0.7)] sm:p-8 lg:rounded-[2.5rem] dark:border-slate-700 dark:bg-slate-800">
@@ -120,6 +124,11 @@ export function InstallingTailwindSection() {
               </div>
             </div>
           </div>
+          {showCode && (
+            <div className="hidden lg:block">
+              <CodeSnippet code={snippets[activeTab]} language={activeTab === "cdn" ? "html" : "bash"} />
+            </div>
+          )}
         </div>
       </div>
     </section>
