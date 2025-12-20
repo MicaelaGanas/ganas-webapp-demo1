@@ -17,9 +17,6 @@ const getInitialPreference = () => {
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 };
 
-/**
- * Synchronises dark mode preference with local storage and the root html element.
- */
 export function useDarkMode() {
   const [isDark, setIsDark] = useState<boolean>(getInitialPreference);
   const [hasStoredPreference, setHasStoredPreference] = useState<boolean>(() => {

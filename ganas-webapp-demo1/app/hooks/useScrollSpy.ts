@@ -7,9 +7,6 @@ interface ScrollSpyArgs {
   offset?: number;
 }
 
-/**
- * Tracks which section is currently visible and returns the active section id.
- */
 export function useScrollSpy({ sectionIds, offset = 0 }: ScrollSpyArgs) {
   const [activeId, setActiveId] = useState(sectionIds[0] ?? "");
 

@@ -2,9 +2,6 @@
 
 import { useCallback, useState } from "react";
 
-/**
- * Provides a copy function and feedback state for clipboard interactions.
- */
 export function useCopyToClipboard() {
   const [copied, setCopied] = useState(false);
 
